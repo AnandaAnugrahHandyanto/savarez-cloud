@@ -1,0 +1,81 @@
+/* app/css/modules/layout.css */
+
+/* General layout adjustments for glass effect consistency */
+body {
+    background-color: #1a1a2e; /* Base background for the overall theme */
+    color: #e0e0e0;
+}
+
+/* Toolbar modernisasi */
+.app-content-list-header,
+.header-menu {
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    margin-bottom: 20px; /* Consistent spacing */
+}
+
+/* Breadcrumb modernisasi */
+.breadcrumb {
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    margin-bottom: 15px;
+}
+
+.breadcrumb a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #9c27b0; /* Savarez accent color */
+}
+
+.breadcrumb .icon-triangle-n {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Grid and spacing consistency (adjust these selectors based on actual DOM) */
+#app-content,
+.files-content,
+.dashboard-content {
+    padding: 20px; /* Overall content padding */
+}
+
+/* Assuming there's a main content wrapper that dictates grid */
+.grid-row {
+    display: grid;
+    gap: 20px; /* Consistent gap between grid items */
+}
+
+.grid-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Consistent gap between column items */
+}
+
+/* Adjustments for various Nextcloud elements to fit the modern theme */
+.button,
+.icon-button {
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.button:hover,
+.icon-button:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Focus states for accessibility */
+.button:focus,
+.icon-button:focus,
+.file-list-item:focus {
+    outline: 2px solid #9c27b0; /* Savarez accent for focus */
+    outline-offset: 2px;
+}

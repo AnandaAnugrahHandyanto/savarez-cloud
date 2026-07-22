@@ -1,0 +1,6 @@
+/* app/css/style.css */
+
+@import url("./modules/cards.css");
+@import url("./modules/layout.css");
+
+/* Anda bisa menambahkan CSS global lainnya di sini jika diperlukan */

@@ -1,0 +1,80 @@
+/* app/css/modules/cards.css */
+
+/* Card general styles */
+.oc-background-container,
+.dashboard-widget,
+.app-sidebar-tabs__content,
+.files-list__item-card {
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover lift effect for cards */
+.oc-background-container:hover,
+.dashboard-widget:hover,
+.app-sidebar-tabs__content:hover,
+.files-list__item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure consistent spacing around cards */
+.dashboard-section__content .dashboard-widget {
+    margin-bottom: 20px; /* Adjust as needed for consistent grid spacing */
+}
+
+/* File list item specifics */
+.file-list-item {
+    border-radius: 12px;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.file-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Selection state for files and items */
+/* Assuming Nextcloud uses .selected for selection */
+.file-list-item.selected,
+.dashboard-widget.selected {
+    background-color: #6a1b9a; /* Warna Savarez: Deep Purple */
+    border-color: #9c27b0;
+    box-shadow: 0 0 0 2px #6a1b9a;
+    color: #ffffff;
+}
+
+/* Style for the text inside selected items */
+.file-list-item.selected .fileactions,
+.file-list-item.selected a,
+.file-list-item.selected span {
+    color: #ffffff;
+}
+
+/* Empty state styling */
+.emptycontent {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+.emptycontent__title {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.emptycontent__text {
+    color: rgba(255, 255, 255, 0.8);
+}
