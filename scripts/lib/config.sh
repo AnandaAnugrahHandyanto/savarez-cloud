@@ -18,13 +18,13 @@ export SAVAREZ_THEME_APP_NAME="savarez_theme"
 export NC_SAVAREZ_THEME_PATH="${NC_APP_DIR}/apps/${SAVAREZ_THEME_APP_NAME}"
 
 # Local development app path
-export LOCAL_APP_PATH="$(dirname "$(dirname "${BASH_SOURCE[0]}")")"/app"
+export LOCAL_APP_PATH="$(dirname "$(dirname "${BASH_SOURCE[0]}")")/app"
 
 # Local backups directory
-export LOCAL_BACKUPS_DIR="$(dirname "$(dirname "${BASH_SOURCE[0]}")")"/backups"
+export LOCAL_BACKUPS_DIR="$(dirname "$(dirname "${BASH_SOURCE[0]}")")/backups"
 
 # Local snapshots directory
-export LOCAL_SNAPSHOTS_DIR="$(dirname "$(dirname "${BASH_SOURCE[0]}")")"/snapshots"
+export LOCAL_SNAPSHOTS_DIR="$(dirname "$(dirname "${BASH_SOURCE[0]}")")/snapshots"
 
 # Nextcloud data directory on production (for occ commands)
 export NC_DATA_DIR="${NC_APP_DIR}/data"
