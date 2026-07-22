@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<info>
+    <id>savarez_theme</id>
+    <name>Savarez Theme</name>
+    <summary>A modern theme for Nextcloud, designed by Savarez.</summary>
+    <description>
+        <![CDATA[
+        This theme provides a modern, glass-surface look with improved card designs,
+        file list, toolbar, and breadcrumb for Nextcloud.
+        ]]>
+    </description>
+    <version>1.0.0</version>
+    <licence>AGPL-3.0-or-later</licence>
+    <author>Savarez</author>
+    <default_enable/>
+    <namespace>SavarezTheme</namespace>
+    <category>theming</category>
+    <require>
+        <nextcloud min-version="34" max-version="34"/>
+    </require>
+    <settings>
+        <admin>OCA\SavarezTheme\Settings\Admin</admin>
+        <personal>OCA\SavarezTheme\Settings\Personal</personal>
+    </settings>
+</info>
