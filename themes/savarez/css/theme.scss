@@ -1,0 +1,22 @@
+// ============================================================
+// Savarez Cloud — Main Theme Entry Point v3
+// ============================================================
+// Compiles to theming.css via: npx sass theme.scss theming.css
+//
+// Import order:
+//   1. variables    — design tokens + light/dark mode
+//   2. animations   — keyframes + reduced-motion
+//   3. accessibility — WCAG AA, focus, keyboard, sr-only
+//   4. layout       — resets, sidebar, header, forms
+//   5. login        — login page
+//   6. dashboard    — dashboard, file browser
+//   7. buttons      — button system
+// ============================================================
+
+@import 'variables';
+@import 'animations';
+@import 'accessibility';
+@import 'layout';
+@import 'login';
+@import 'dashboard';
+@import 'buttons';

@@ -1,0 +1,314 @@
+// ============================================================
+// Savarez Cloud — Dashboard
+// ============================================================
+// Dashboard, file browser, sidebar, settings, activity.
+// Responsive: 320 → 480 → 768 → 1024 → 1440px
+// ============================================================
+
+@import 'variables';
+@import 'animations';
+
+// ── Dashboard Container ─────────────────────────────────────
+
+.dashboard,
+#app-content {
+  background: var(--sc-bg) !important;
+}
+
+// ── Welcome ─────────────────────────────────────────────────
+
+.dashboard__welcome,
+.welcome-section {
+  padding: var(--sc-space-8) 0 var(--sc-space-6);
+
+  h2, .welcome-title {
+    font-size: var(--sc-text-2xl) !important;
+    font-weight: var(--sc-weight-bold) !important;
+    margin-bottom: var(--sc-space-2) !important;
+  }
+
+  p, .welcome-subtitle {
+    color: var(--sc-text-secondary);
+    font-size: var(--sc-text-sm);
+  }
+}
+
+// ── Cards Grid ──────────────────────────────────────────────
+
+.dashboard__cards,
+.dash--apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sc-space-5);
+  padding: var(--sc-space-4) 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--sc-space-4);
+  }
+}
+
+// ── Card ────────────────────────────────────────────────────
+
+.dashboard__card,
+.dash--app,
+.app-sidebar-new,
+#app-sidebar {
+  background: var(--sc-glass-bg) !important;
+  backdrop-filter: blur(var(--sc-glass-blur));
+  border: 1px solid var(--sc-glass-border);
+  border-radius: var(--sc-radius-lg) !important;
+  padding: var(--sc-space-6);
+  transition: all var(--sc-transition);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--sc-glass-border), transparent);
+  }
+
+  &:hover {
+    border-color: var(--sc-glass-border-hover);
+    box-shadow: var(--sc-shadow-lg);
+    transform: translateY(-2px);
+
+    .dashboard__card-icon,
+    .dash--app-icon {
+      transform: scale(1.08);
+    }
+  }
+}
+
+// ── Card Icon ───────────────────────────────────────────────
+
+.dashboard__card-icon,
+.dash--app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--sc-radius-md);
+  background: var(--sc-gradient-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sc-space-4);
+  transition: transform var(--sc-transition);
+}
+
+// ── Card Text ───────────────────────────────────────────────
+
+.dashboard__card-title,
+.dash--app-title {
+  font-size: var(--sc-text-lg) !important;
+  font-weight: var(--sc-weight-semibold) !important;
+  margin-bottom: var(--sc-space-2) !important;
+}
+
+.dashboard__card-description,
+.dash--app-description {
+  font-size: var(--sc-text-sm);
+  color: var(--sc-text-secondary);
+  line-height: var(--sc-leading-relaxed);
+}
+
+// ── File Browser ────────────────────────────────────────────
+
+#fileList,
+.file-list {
+  tr {
+    transition: background var(--sc-transition-fast);
+    border-radius: var(--sc-radius-sm);
+
+    &:hover { background: var(--sc-glass-bg-hover) !important; }
+    &.selected { background: var(--sc-gradient-subtle) !important; }
+  }
+
+  td {
+    color: var(--sc-text);
+    font-size: var(--sc-text-sm);
+    padding: var(--sc-space-3) var(--sc-space-4);
+    border-bottom: 1px solid var(--sc-glass-border) !important;
+
+    &.filename .icon-folder,
+    &.filename .icon-file {
+      opacity: 0.8;
+      transition: opacity var(--sc-transition-fast);
+    }
+
+    &:hover .icon-folder,
+    &:hover .icon-file { opacity: 1; }
+
+    @media (max-width: 480px) {
+      padding: var(--sc-space-2) var(--sc-space-3);
+      font-size: var(--sc-text-xs);
+    }
+  }
+}
+
+// ── Controls Bar ────────────────────────────────────────────
+
+.file-actions,
+#controls {
+  background: transparent !important;
+  border-bottom: 1px solid var(--sc-glass-border) !important;
+  padding: var(--sc-space-3) var(--sc-space-4);
+}
+
+// ── Content Header ──────────────────────────────────────────
+
+.app-content-header,
+.content-header {
+  border-bottom: 1px solid var(--sc-glass-border);
+  padding-bottom: var(--sc-space-4);
+  margin-bottom: var(--sc-space-6);
+
+  h2 {
+    font-size: var(--sc-text-xl) !important;
+    font-weight: var(--sc-weight-bold) !important;
+  }
+}
+
+// ── Settings ────────────────────────────────────────────────
+
+.settings-section,
+.app-settings-section {
+  background: var(--sc-glass-bg) !important;
+  border: 1px solid var(--sc-glass-border);
+  border-radius: var(--sc-radius-lg);
+  padding: var(--sc-space-6);
+  margin-bottom: var(--sc-space-5);
+
+  h3 {
+    font-size: var(--sc-text-lg);
+    font-weight: var(--sc-weight-semibold);
+    margin-bottom: var(--sc-space-4);
+  }
+
+  .settings-hint {
+    color: var(--sc-text-muted);
+    font-size: var(--sc-text-sm);
+  }
+}
+
+// ── Activity ────────────────────────────────────────────────
+
+.activity-item,
+.app-activity-item {
+  padding: var(--sc-space-4);
+  border-radius: var(--sc-radius-md);
+  transition: background var(--sc-transition-fast);
+  border-bottom: 1px solid var(--sc-glass-border);
+
+  &:hover { background: var(--sc-glass-bg-hover); }
+
+  .activity-message {
+    font-size: var(--sc-text-sm);
+  }
+
+  .activity-timestamp {
+    color: var(--sc-text-muted);
+    font-size: var(--sc-text-xs);
+  }
+}
+
+// ── Notifications ───────────────────────────────────────────
+
+.notification-container .notification {
+  background: var(--sc-glass-bg);
+  border: 1px solid var(--sc-glass-border);
+  border-radius: var(--sc-radius-md);
+  padding: var(--sc-space-4);
+  margin-bottom: var(--sc-space-3);
+  transition: all var(--sc-transition-fast);
+
+  &:hover {
+    background: var(--sc-glass-bg-hover);
+    border-color: var(--sc-glass-border-hover);
+  }
+
+  .notification-subject {
+    font-weight: var(--sc-weight-medium);
+  }
+
+  .notification-message {
+    color: var(--sc-text-secondary);
+    font-size: var(--sc-text-sm);
+  }
+}
+
+// ── Empty State ─────────────────────────────────────────────
+
+.empty-content,
+.content-empty {
+  text-align: center;
+  padding: var(--sc-space-16) var(--sc-space-8);
+
+  .icon-empty { opacity: 0.2; margin-bottom: var(--sc-space-6); }
+
+  h2 {
+    color: var(--sc-text-secondary);
+    font-size: var(--sc-text-xl);
+    font-weight: var(--sc-weight-semibold);
+  }
+
+  p { color: var(--sc-text-muted); font-size: var(--sc-text-sm); }
+}
+
+// ── User Menu ───────────────────────────────────────────────
+
+.header-menu .popovermenu,
+#header .header-menu .popovermenu {
+  background: var(--sc-bg-surface) !important;
+  border: 1px solid var(--sc-glass-border) !important;
+  border-radius: var(--sc-radius-md) !important;
+  box-shadow: var(--sc-shadow-xl) !important;
+  padding: var(--sc-space-2) !important;
+
+  li a, li button {
+    border-radius: var(--sc-radius-sm) !important;
+    padding: var(--sc-space-2) var(--sc-space-3) !important;
+    color: var(--sc-text-secondary) !important;
+    font-size: var(--sc-text-sm);
+    transition: all var(--sc-transition-fast);
+
+    &:hover {
+      background: var(--sc-glass-bg-hover) !important;
+      color: var(--sc-text) !important;
+    }
+
+    .icon {
+      opacity: 0.6;
+      transition: opacity var(--sc-transition-fast);
+    }
+
+    &:hover .icon { opacity: 1; }
+  }
+}
+
+// ── Responsive: 320px ──────────────────────────────────────
+
+@media (max-width: 320px) {
+  .dashboard__cards,
+  .dash--apps {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__card,
+  .dash--app {
+    padding: var(--sc-space-4);
+  }
+}
+
+// ── Responsive: 1440px+ ────────────────────────────────────
+
+@media (min-width: 1440px) {
+  .dashboard__cards,
+  .dash--apps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

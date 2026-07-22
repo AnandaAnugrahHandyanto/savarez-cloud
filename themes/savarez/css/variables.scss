@@ -1,0 +1,216 @@
+// ============================================================
+// Savarez Cloud — Design Tokens v3
+// ============================================================
+// Single source of truth for all design primitives.
+// No duplicate definitions. Every token used at least once.
+// ============================================================
+
+:root {
+  // ── Color: Primary (Deep Purple) ─────────────────────────
+  --sc-primary:            #7C3AED;
+  --sc-primary-rgb:        124, 58, 237;
+  --sc-primary-light:      #A78BFA;
+  --sc-primary-dark:       #5B21B6;
+  --sc-primary-contrast:   #FFFFFF;
+
+  // ── Color: Accent (Electric Blue) ────────────────────────
+  --sc-accent:             #3B82F6;
+  --sc-accent-rgb:         59, 130, 246;
+  --sc-accent-light:       #60A5FA;
+  --sc-accent-dark:        #2563EB;
+  --sc-accent-contrast:    #FFFFFF;
+
+  // ── Color: Gradient ──────────────────────────────────────
+  --sc-gradient:           linear-gradient(135deg, var(--sc-primary) 0%, var(--sc-accent) 100%);
+  --sc-gradient-subtle:    linear-gradient(135deg, rgba(var(--sc-primary-rgb), 0.12) 0%, rgba(var(--sc-accent-rgb), 0.08) 100%);
+  --sc-gradient-bg:        linear-gradient(135deg, #0F0B1E 0%, #1A1040 30%, #0B1A2E 70%, #0F172A 100%);
+
+  // ── Color: Background ────────────────────────────────────
+  --sc-bg:                 #0F172A;
+  --sc-bg-rgb:             15, 23, 42;
+  --sc-bg-deep:            #0B1120;
+  --sc-bg-surface:         #1E293B;
+  --sc-bg-elevated:        #283548;
+
+  // ── Color: Glassmorphism ─────────────────────────────────
+  --sc-glass-bg:           rgba(255, 255, 255, 0.04);
+  --sc-glass-bg-hover:     rgba(255, 255, 255, 0.07);
+  --sc-glass-border:       rgba(255, 255, 255, 0.08);
+  --sc-glass-border-hover: rgba(255, 255, 255, 0.14);
+  --sc-glass-blur:         16px;
+
+  // ── Color: Text ──────────────────────────────────────────
+  --sc-text:               #F1F5F9;
+  --sc-text-secondary:     #94A3B8;
+  --sc-text-muted:         #64748B;
+  --sc-text-inverse:       #0F172A;
+  --sc-text-on-primary:    #FFFFFF;
+
+  // ── Color: Status ────────────────────────────────────────
+  --sc-success:            #10B981;
+  --sc-success-rgb:        16, 185, 129;
+  --sc-success-bg:         rgba(16, 185, 129, 0.12);
+  --sc-warning:            #F59E0B;
+  --sc-warning-rgb:        245, 158, 11;
+  --sc-warning-bg:         rgba(245, 158, 11, 0.12);
+  --sc-error:              #EF4444;
+  --sc-error-rgb:          239, 68, 68;
+  --sc-error-bg:           rgba(239, 68, 68, 0.12);
+  --sc-info:               #3B82F6;
+  --sc-info-bg:            rgba(59, 130, 246, 0.12);
+
+  // ── Color: Border ────────────────────────────────────────
+  --sc-border:             rgba(255, 255, 255, 0.08);
+  --sc-border-strong:      rgba(255, 255, 255, 0.14);
+
+  // ── Typography ───────────────────────────────────────────
+  --sc-font:               'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --sc-font-mono:          'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --sc-text-xs:            0.75rem;
+  --sc-text-sm:            0.875rem;
+  --sc-text-base:          1rem;
+  --sc-text-lg:            1.125rem;
+  --sc-text-xl:            1.25rem;
+  --sc-text-2xl:           1.5rem;
+  --sc-text-3xl:           1.875rem;
+  --sc-text-4xl:           2.25rem;
+
+  --sc-weight-regular:     400;
+  --sc-weight-medium:      500;
+  --sc-weight-semibold:    600;
+  --sc-weight-bold:        700;
+
+  --sc-leading-tight:      1.25;
+  --sc-leading-normal:     1.5;
+  --sc-leading-relaxed:    1.625;
+
+  --sc-tracking-tight:     -0.025em;
+  --sc-tracking-normal:    0;
+  --sc-tracking-wide:      0.02em;
+  --sc-tracking-wider:     0.06em;
+
+  // ── Spacing ──────────────────────────────────────────────
+  --sc-space-1:            0.25rem;
+  --sc-space-2:            0.5rem;
+  --sc-space-3:            0.75rem;
+  --sc-space-4:            1rem;
+  --sc-space-5:            1.25rem;
+  --sc-space-6:            1.5rem;
+  --sc-space-8:            2rem;
+  --sc-space-10:           2.5rem;
+  --sc-space-12:           3rem;
+  --sc-space-16:           4rem;
+  --sc-space-20:           5rem;
+  --sc-space-24:           6rem;
+
+  // ── Border Radius ────────────────────────────────────────
+  --sc-radius-sm:          8px;
+  --sc-radius-md:          12px;
+  --sc-radius-lg:          16px;
+  --sc-radius-xl:          24px;
+  --sc-radius-full:        9999px;
+
+  // ── Shadows ──────────────────────────────────────────────
+  --sc-shadow-sm:          0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.15);
+  --sc-shadow-md:          0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --sc-shadow-lg:          0 8px 32px rgba(0, 0, 0, 0.35), 0 4px 8px rgba(0, 0, 0, 0.2);
+  --sc-shadow-xl:          0 16px 48px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.25);
+  --sc-shadow-glow:        0 0 32px rgba(var(--sc-primary-rgb), 0.35);
+  --sc-shadow-glow-accent: 0 0 32px rgba(var(--sc-accent-rgb), 0.30);
+
+  // ── Transitions ──────────────────────────────────────────
+  --sc-ease-default:       cubic-bezier(0.4, 0, 0.2, 1);
+  --sc-ease-in:            cubic-bezier(0.4, 0, 1, 1);
+  --sc-ease-out:           cubic-bezier(0, 0, 0.2, 1);
+  --sc-ease-spring:        cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --sc-duration-fast:      100ms;
+  --sc-duration-base:      200ms;
+  --sc-duration-slow:      300ms;
+  --sc-duration-slower:    500ms;
+
+  --sc-transition:         var(--sc-duration-base) var(--sc-ease-default);
+  --sc-transition-fast:    var(--sc-duration-fast) var(--sc-ease-default);
+  --sc-transition-slow:    var(--sc-duration-slow) var(--sc-ease-default);
+  --sc-transition-spring:  var(--sc-duration-slower) var(--sc-ease-spring);
+
+  // ── Z-Index ──────────────────────────────────────────────
+  --sc-z-base:             0;
+  --sc-z-dropdown:         100;
+  --sc-z-sticky:           200;
+  --sc-z-overlay:          300;
+  --sc-z-modal:            400;
+  --sc-z-popover:          500;
+  --sc-z-toast:            600;
+
+  // ── Layout ───────────────────────────────────────────────
+  --sc-sidebar-w:          260px;
+  --sc-sidebar-w-collapsed: 64px;
+  --sc-header-h:           56px;
+  --sc-content-max:        1440px;
+  --sc-login-max:          420px;
+
+  // ── Focus Ring ───────────────────────────────────────────
+  --sc-focus-ring:         0 0 0 3px rgba(var(--sc-primary-rgb), 0.45);
+  --sc-focus-ring-accent:  0 0 0 3px rgba(var(--sc-accent-rgb), 0.45);
+
+  // ── Breakpoints (reference only, use in @media) ──────────
+  // --sc-bp-sm:  480px
+  // --sc-bp-md:  768px
+  // --sc-bp-lg:  1024px
+  // --sc-bp-xl:  1440px
+}
+
+// ============================================================
+// Light Mode
+// ============================================================
+
+@media (prefers-color-scheme: light) {
+  :root {
+    // Background
+    --sc-bg:               #F8FAFC;
+    --sc-bg-rgb:           248, 250, 252;
+    --sc-bg-deep:          #F1F5F9;
+    --sc-bg-surface:       #FFFFFF;
+    --sc-bg-elevated:      #FFFFFF;
+
+    // Glass
+    --sc-glass-bg:         rgba(255, 255, 255, 0.7);
+    --sc-glass-bg-hover:   rgba(255, 255, 255, 0.85);
+    --sc-glass-border:     rgba(0, 0, 0, 0.08);
+    --sc-glass-border-hover: rgba(0, 0, 0, 0.14);
+    --sc-glass-blur:       16px;
+
+    // Text
+    --sc-text:             #0F172A;
+    --sc-text-secondary:   #475569;
+    --sc-text-muted:       #94A3B8;
+    --sc-text-inverse:     #F8FAFC;
+
+    // Borders
+    --sc-border:           rgba(0, 0, 0, 0.08);
+    --sc-border-strong:    rgba(0, 0, 0, 0.14);
+
+    // Shadows (lighter for light mode)
+    --sc-shadow-sm:        0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --sc-shadow-md:        0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --sc-shadow-lg:        0 8px 32px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.05);
+    --sc-shadow-xl:        0 16px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
+    --sc-shadow-glow:      0 0 32px rgba(var(--sc-primary-rgb), 0.15);
+    --sc-shadow-glow-accent: 0 0 32px rgba(var(--sc-accent-rgb), 0.12);
+
+    // Gradient BG (light)
+    --sc-gradient-bg:      linear-gradient(135deg, #F8FAFC 0%, #EDE9FE 30%, #DBEAFE 70%, #F8FAFC 100%);
+
+    // Focus ring
+    --sc-focus-ring:       0 0 0 3px rgba(var(--sc-primary-rgb), 0.25);
+    --sc-focus-ring-accent: 0 0 0 3px rgba(var(--sc-accent-rgb), 0.25);
+
+    // Status (slightly adjusted for light bg)
+    --sc-success-bg:       rgba(16, 185, 129, 0.08);
+    --sc-warning-bg:       rgba(245, 158, 11, 0.08);
+    --sc-error-bg:         rgba(239, 68, 68, 0.08);
+    --sc-info-bg:          rgba(59, 130, 246, 0.08);
+  }
+}

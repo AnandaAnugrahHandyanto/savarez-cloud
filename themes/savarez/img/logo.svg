@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="sg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+    <clipPath id="hex">
+      <polygon points="100,12 176,56 176,144 100,188 24,144 24,56"/>
+    </clipPath>
+  </defs>
+
+  <!-- Subtle hexagonal frame -->
+  <polygon points="100,12 176,56 176,144 100,188 24,144 24,56"
+           fill="none" stroke="url(#sg)" stroke-width="2" opacity="0.25"/>
+
+  <!-- Abstract "S" mark — two interlocking geometric forms -->
+  <g clip-path="url(#hex)">
+    <!-- Upper arc -->
+    <path d="M68,72 C68,56 80,44 96,44 L120,44 C136,44 148,56 148,72 C148,88 136,96 120,96 L80,96 C64,96 52,108 52,124 C52,140 64,152 80,152 L104,152"
+          stroke="url(#sg)" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.9"/>
+
+    <!-- Lower arc (completes the S) -->
+    <path d="M132,128 C132,144 120,156 104,156 L80,156 C64,156 52,144 52,128"
+          stroke="url(#sg2)" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.7"/>
+
+    <!-- Center accent dot -->
+    <circle cx="100" cy="100" r="5" fill="url(#sg)" opacity="0.8"/>
+  </g>
+
+  <!-- Decorative elements -->
+  <circle cx="38" cy="34" r="2.5" fill="#7C3AED" opacity="0.3"/>
+  <circle cx="165" cy="38" r="2" fill="#3B82F6" opacity="0.25"/>
+  <circle cx="34" cy="168" r="2" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="168" cy="164" r="2.5" fill="#7C3AED" opacity="0.25"/>
+</svg>

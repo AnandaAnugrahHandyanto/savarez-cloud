@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="og" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64748B" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#94A3B8" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Disconnected chain links -->
+  <g stroke="url(#og)" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5">
+    <!-- Left link -->
+    <rect x="130" y="135" width="40" height="30" rx="10"/>
+    <!-- Right link (offset/broken) -->
+    <rect x="210" y="140" width="40" height="30" rx="10" transform="rotate(-8, 230, 155)"/>
+  </g>
+
+  <!-- Break lines (suggesting disconnection) -->
+  <line x1="178" y1="142" x2="182" y2="138" stroke="#94A3B8" stroke-width="1.5" opacity="0.3"/>
+  <line x1="180" y1="155" x2="184" y2="155" stroke="#94A3B8" stroke-width="1.5" opacity="0.3"/>
+  <line x1="178" y1="168" x2="182" y2="172" stroke="#94A3B8" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- WiFi crossed out -->
+  <g transform="translate(185, 95)" opacity="0.3">
+    <path d="M0,20 Q15,5 30,20" stroke="#94A3B8" stroke-width="1.5" fill="none"/>
+    <path d="M5,15 Q15,5 25,15" stroke="#94A3B8" stroke-width="1.5" fill="none"/>
+    <circle cx="15" cy="22" r="2" fill="#94A3B8"/>
+    <line x1="5" y1="28" x2="25" y2="5" stroke="#EF4444" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Dots -->
+  <circle cx="100" cy="100" r="2" fill="#64748B" opacity="0.2"/>
+  <circle cx="300" cy="110" r="2" fill="#94A3B8" opacity="0.2"/>
+  <circle cx="110" cy="220" r="1.5" fill="#94A3B8" opacity="0.15"/>
+  <circle cx="290" cy="210" r="1.5" fill="#64748B" opacity="0.15"/>
+</svg>

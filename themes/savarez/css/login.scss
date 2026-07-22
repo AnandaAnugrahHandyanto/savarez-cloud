@@ -1,0 +1,325 @@
+// ============================================================
+// Savarez Cloud — Login Page
+// ============================================================
+// Full visual redesign. CSS-only, no PHP core changes.
+// Responsive: 320 → 480 → 768 → 1024 → 1440px
+// Supports light/dark via prefers-color-scheme.
+// ============================================================
+
+@import 'variables';
+@import 'animations';
+
+// ── Login Body ──────────────────────────────────────────────
+
+#body-login,
+.login,
+body.login {
+  background: var(--sc-gradient-bg) !important;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+// ── Background Orbs ─────────────────────────────────────────
+
+#body-login::before,
+.login::before {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(var(--sc-primary-rgb), 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: sc-orb-float 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#body-login::after,
+.login::after {
+  content: '';
+  position: fixed;
+  bottom: -25%;
+  right: -15%;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(circle, rgba(var(--sc-accent-rgb), 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: sc-orb-float-reverse 25s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+// ── Login Wrapper ───────────────────────────────────────────
+
+.login-wrapper,
+#login-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--sc-login-max);
+  margin: var(--sc-space-8);
+  padding: 0;
+
+  @media (max-width: 480px) {
+    margin: var(--sc-space-4);
+    max-width: 100%;
+  }
+}
+
+// ── Login Card ──────────────────────────────────────────────
+
+.login-form,
+#login-form,
+form.form-login {
+  background: var(--sc-glass-bg) !important;
+  backdrop-filter: blur(24px) saturate(1.2);
+  border: 1px solid var(--sc-glass-border);
+  border-radius: var(--sc-radius-xl) !important;
+  padding: var(--sc-space-10) var(--sc-space-8) !important;
+  box-shadow: var(--sc-shadow-xl);
+  position: relative;
+  overflow: hidden;
+  animation: sc-card-enter var(--sc-transition-spring);
+
+  // Top highlight
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--sc-glass-border-hover), transparent);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--sc-space-8) var(--sc-space-6) !important;
+    border-radius: var(--sc-radius-lg) !important;
+  }
+}
+
+// ── Logo ────────────────────────────────────────────────────
+
+.login-form .login-logo,
+.login-header,
+.nklogin-brand {
+  text-align: center;
+  margin-bottom: var(--sc-space-8);
+
+  img {
+    height: 80px;
+    width: auto;
+    margin-bottom: var(--sc-space-4);
+    filter: drop-shadow(0 4px 12px rgba(var(--sc-primary-rgb), 0.3));
+    transition: transform var(--sc-transition-slow), filter var(--sc-transition-slow);
+
+    &:hover {
+      transform: scale(1.05) translateY(-2px);
+      filter: drop-shadow(0 8px 20px rgba(var(--sc-primary-rgb), 0.4));
+    }
+
+    @media (max-width: 480px) {
+      height: 64px;
+    }
+  }
+}
+
+// ── Brand Name ──────────────────────────────────────────────
+
+.login-form h2,
+.login-header h2,
+.nklogin-title {
+  font-family: var(--sc-font);
+  font-size: var(--sc-text-3xl) !important;
+  font-weight: var(--sc-weight-bold) !important;
+  color: var(--sc-text) !important;
+  text-align: center;
+  margin: 0 0 var(--sc-space-2) !important;
+  letter-spacing: var(--sc-tracking-tight);
+
+  @media (max-width: 480px) {
+    font-size: var(--sc-text-2xl) !important;
+  }
+}
+
+// ── Tagline ─────────────────────────────────────────────────
+
+.login-form .login-subtitle,
+.login-header p,
+.nklogin-slogan {
+  font-family: var(--sc-font);
+  font-size: var(--sc-text-sm) !important;
+  color: var(--sc-text-secondary) !important;
+  text-align: center;
+  margin: 0 0 var(--sc-space-8) !important;
+  letter-spacing: var(--sc-tracking-wide);
+}
+
+// ── Form Groups ─────────────────────────────────────────────
+
+.login-form .input-group,
+.login-form fieldset,
+.form-group {
+  margin-bottom: var(--sc-space-5);
+}
+
+.login-form label,
+.login-form .input-label {
+  display: block;
+  font-size: var(--sc-text-xs);
+  font-weight: var(--sc-weight-semibold);
+  color: var(--sc-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--sc-tracking-wider);
+  margin-bottom: var(--sc-space-2);
+}
+
+// ── Inputs ──────────────────────────────────────────────────
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="email"],
+.form-login input[type="text"],
+.form-login input[type="password"],
+input[name="user"],
+input[name="password"] {
+  background: var(--sc-glass-bg) !important;
+  border: 1px solid var(--sc-glass-border) !important;
+  border-radius: var(--sc-radius-md) !important;
+  color: var(--sc-text) !important;
+  padding: var(--sc-space-4) var(--sc-space-5) !important;
+  font-size: var(--sc-text-base) !important;
+  font-family: var(--sc-font);
+  width: 100%;
+  transition: all var(--sc-transition-fast);
+  height: auto;
+
+  &:hover {
+    border-color: var(--sc-glass-border-hover) !important;
+    background: var(--sc-glass-bg-hover) !important;
+  }
+
+  &:focus {
+    outline: none !important;
+    border-color: var(--sc-primary) !important;
+    box-shadow: var(--sc-focus-ring) !important;
+    background: var(--sc-glass-bg-hover) !important;
+  }
+
+  &::placeholder {
+    color: var(--sc-text-muted);
+  }
+}
+
+// ── Submit Button ───────────────────────────────────────────
+
+.login-form input[type="submit"],
+#login-form input[type="submit"],
+.login-form button[type="submit"],
+.form-login input[type="submit"] {
+  background: var(--sc-gradient) !important;
+  color: var(--sc-text-on-primary) !important;
+  border: none !important;
+  border-radius: var(--sc-radius-md) !important;
+  padding: var(--sc-space-4) var(--sc-space-6) !important;
+  font-size: var(--sc-text-base) !important;
+  font-weight: var(--sc-weight-semibold) !important;
+  font-family: var(--sc-font);
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--sc-transition) !important;
+  box-shadow: 0 4px 16px rgba(var(--sc-primary-rgb), 0.3);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 28px rgba(var(--sc-primary-rgb), 0.45) !important;
+
+    &::before { left: 100%; }
+  }
+
+  &:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 8px rgba(var(--sc-primary-rgb), 0.3) !important;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--sc-accent-light);
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
+
+// ── Error / Info Messages ───────────────────────────────────
+
+.login-form .warning,
+.login-form .error {
+  background: var(--sc-error-bg) !important;
+  border: 1px solid rgba(var(--sc-error-rgb), 0.3) !important;
+  border-radius: var(--sc-radius-md) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  font-size: var(--sc-text-sm);
+  margin-bottom: var(--sc-space-4);
+  text-align: center;
+}
+
+.login-form .info {
+  background: var(--sc-info-bg) !important;
+  border: 1px solid rgba(var(--sc-accent-rgb), 0.3) !important;
+  border-radius: var(--sc-radius-md) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  font-size: var(--sc-text-sm);
+}
+
+// ── Footer ──────────────────────────────────────────────────
+
+.login-form .login-footer,
+#login-form .login-footer {
+  text-align: center;
+  margin-top: var(--sc-space-6);
+  padding-top: var(--sc-space-6);
+  border-top: 1px solid var(--sc-glass-border);
+
+  p, span {
+    color: var(--sc-text-muted);
+    font-size: var(--sc-text-xs);
+  }
+}
+
+// ── Responsive: 320px ──────────────────────────────────────
+
+@media (max-width: 320px) {
+  .login-wrapper,
+  #login-wrapper {
+    margin: var(--sc-space-3);
+  }
+
+  .login-form,
+  #login-form,
+  form.form-login {
+    padding: var(--sc-space-6) var(--sc-space-5) !important;
+  }
+}

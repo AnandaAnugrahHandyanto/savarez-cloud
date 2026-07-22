@@ -1,0 +1,324 @@
+// ============================================================
+// Savarez Cloud — Layout
+// ============================================================
+// Global resets, sidebar, header, content area, forms, cards.
+// Responsive: 320 → 480 → 768 → 1024 → 1440px
+// ============================================================
+
+@import 'variables';
+@import 'animations';
+
+// ── Reset ───────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--sc-font);
+  font-size: 16px;
+  line-height: var(--sc-leading-normal);
+  color: var(--sc-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sc-bg);
+  color: var(--sc-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color var(--sc-transition), color var(--sc-transition);
+}
+
+// ── Selection ───────────────────────────────────────────────
+
+::selection {
+  background: rgba(var(--sc-primary-rgb), 0.35);
+  color: var(--sc-text);
+}
+
+// ── Scrollbar ───────────────────────────────────────────────
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+
+  &-track { background: transparent; }
+
+  &-thumb {
+    background: var(--sc-glass-border);
+    border-radius: var(--sc-radius-full);
+
+    &:hover { background: var(--sc-glass-border-hover); }
+  }
+}
+
+// ── Links ───────────────────────────────────────────────────
+
+a {
+  color: var(--sc-accent-light);
+  text-decoration: none;
+  transition: color var(--sc-transition-fast);
+
+  &:hover { color: var(--sc-primary-light); }
+
+  &:focus-visible {
+    outline: 2px solid var(--sc-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+// ── Headings ────────────────────────────────────────────────
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--sc-weight-bold);
+  line-height: var(--sc-leading-tight);
+  color: var(--sc-text);
+  margin: 0 0 var(--sc-space-4);
+}
+
+h1 { font-size: var(--sc-text-4xl); letter-spacing: var(--sc-tracking-tight); }
+h2 { font-size: var(--sc-text-3xl); letter-spacing: var(--sc-tracking-tight); }
+h3 { font-size: var(--sc-text-2xl); }
+h4 { font-size: var(--sc-text-xl); }
+h5 { font-size: var(--sc-text-lg); }
+h6 { font-size: var(--sc-text-base); }
+
+// ── Sidebar ─────────────────────────────────────────────────
+
+#app-navigation,
+.app-navigation {
+  background: rgba(var(--sc-bg-rgb), 0.85) !important;
+  backdrop-filter: blur(var(--sc-glass-blur));
+  border-right: 1px solid var(--sc-glass-border) !important;
+  transition: width var(--sc-transition-slow), background-color var(--sc-transition);
+
+  ul li {
+    a,
+    .app-navigation-entry-link {
+      color: var(--sc-text-secondary);
+      border-radius: var(--sc-radius-sm);
+      margin: 2px var(--sc-space-2);
+      padding: var(--sc-space-2) var(--sc-space-3);
+      transition: all var(--sc-transition-fast);
+      font-weight: var(--sc-weight-medium);
+      font-size: var(--sc-text-sm);
+
+      .icon {
+        margin-right: var(--sc-space-3);
+        opacity: 0.7;
+        transition: opacity var(--sc-transition-fast);
+        min-width: 20px;
+        text-align: center;
+      }
+
+      &:hover,
+      &:focus-visible {
+        background: var(--sc-glass-bg-hover);
+        color: var(--sc-text);
+
+        .icon { opacity: 1; }
+      }
+    }
+
+    &.active > a,
+    &.active > .app-navigation-entry-link {
+      background: var(--sc-gradient-subtle);
+      color: var(--sc-text);
+      font-weight: var(--sc-weight-semibold);
+
+      .icon { opacity: 1; }
+    }
+  }
+}
+
+// ── Header ──────────────────────────────────────────────────
+
+#header,
+.header {
+  background: rgba(var(--sc-bg-rgb), 0.9) !important;
+  backdrop-filter: blur(var(--sc-glass-blur));
+  border-bottom: 1px solid var(--sc-glass-border) !important;
+  height: var(--sc-header-h);
+  z-index: var(--sc-z-sticky);
+  transition: background-color var(--sc-transition);
+}
+
+// ── Content ─────────────────────────────────────────────────
+
+#content,
+.content {
+  background: var(--sc-bg) !important;
+  color: var(--sc-text);
+  min-height: 100vh;
+  transition: background-color var(--sc-transition);
+}
+
+.app-content {
+  padding: var(--sc-space-8);
+  max-width: var(--sc-content-max);
+
+  @media (max-width: 768px) {
+    padding: var(--sc-space-4);
+  }
+
+  @media (max-width: 480px) {
+    padding: var(--sc-space-3);
+  }
+}
+
+// ── Cards ───────────────────────────────────────────────────
+
+.card,
+.app-settings-section,
+.property-group {
+  background: var(--sc-glass-bg) !important;
+  backdrop-filter: blur(var(--sc-glass-blur));
+  border: 1px solid var(--sc-glass-border);
+  border-radius: var(--sc-radius-lg) !important;
+  padding: var(--sc-space-6);
+  box-shadow: var(--sc-shadow-md);
+  transition: all var(--sc-transition);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--sc-glass-border), transparent);
+    border-radius: var(--sc-radius-lg) var(--sc-radius-lg) 0 0;
+  }
+
+  &:hover {
+    border-color: var(--sc-glass-border-hover);
+    box-shadow: var(--sc-shadow-lg);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--sc-space-4);
+  }
+}
+
+// ── Forms ───────────────────────────────────────────────────
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+textarea,
+select {
+  background: var(--sc-glass-bg) !important;
+  border: 1px solid var(--sc-glass-border) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  color: var(--sc-text) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  font-family: var(--sc-font);
+  font-size: var(--sc-text-sm);
+  transition: all var(--sc-transition-fast);
+  width: 100%;
+
+  &:hover {
+    border-color: var(--sc-glass-border-hover) !important;
+    background: var(--sc-glass-bg-hover) !important;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--sc-primary) !important;
+    box-shadow: var(--sc-focus-ring);
+    background: var(--sc-glass-bg-hover) !important;
+  }
+
+  &::placeholder { color: var(--sc-text-muted); }
+}
+
+// ── Modals ──────────────────────────────────────────────────
+
+.modal,
+.dialog {
+  background: var(--sc-bg-surface) !important;
+  border: 1px solid var(--sc-glass-border);
+  border-radius: var(--sc-radius-xl) !important;
+  box-shadow: var(--sc-shadow-xl) !important;
+}
+
+// ── Breadcrumbs ─────────────────────────────────────────────
+
+.breadcrumbs .crumb {
+  color: var(--sc-text-secondary);
+  font-size: var(--sc-text-sm);
+
+  a {
+    color: var(--sc-text-secondary);
+    &:hover { color: var(--sc-text); }
+  }
+
+  &.last {
+    color: var(--sc-text);
+    font-weight: var(--sc-weight-semibold);
+  }
+}
+
+// ── Tags ────────────────────────────────────────────────────
+
+.tag,
+.systemtags .tag {
+  background: var(--sc-gradient-subtle) !important;
+  color: var(--sc-primary-light) !important;
+  border: 1px solid rgba(var(--sc-primary-rgb), 0.25) !important;
+  border-radius: var(--sc-radius-full) !important;
+  padding: var(--sc-space-1) var(--sc-space-3) !important;
+  font-size: var(--sc-text-xs);
+  font-weight: var(--sc-weight-medium);
+}
+
+// ── Loading ─────────────────────────────────────────────────
+
+.loading::after,
+.loading-icon::after {
+  border-color: var(--sc-primary) !important;
+  border-top-color: transparent !important;
+}
+
+// ── Utility ─────────────────────────────────────────────────
+
+.sc-gradient-text {
+  background: var(--sc-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sc-glass {
+  background: var(--sc-glass-bg);
+  backdrop-filter: blur(var(--sc-glass-blur));
+  border: 1px solid var(--sc-glass-border);
+  border-radius: var(--sc-radius-lg);
+}
+
+// ── Responsive: 320px ──────────────────────────────────────
+
+@media (max-width: 320px) {
+  html { font-size: 14px; }
+
+  h1 { font-size: var(--sc-text-3xl); }
+  h2 { font-size: var(--sc-text-2xl); }
+}
+
+// ── Responsive: 1440px+ ────────────────────────────────────
+
+@media (min-width: 1440px) {
+  .app-content {
+    padding: var(--sc-space-10) var(--sc-space-12);
+  }
+}

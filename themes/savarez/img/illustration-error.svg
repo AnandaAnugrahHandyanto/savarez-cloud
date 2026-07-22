@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="eg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Warning triangle -->
+  <path d="M200,80 L280,220 L120,220 Z"
+        fill="none" stroke="url(#eg)" stroke-width="2.5" stroke-linejoin="round" opacity="0.6"/>
+
+  <!-- Exclamation mark -->
+  <line x1="200" y1="130" x2="200" y2="175" stroke="#EF4444" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <circle cx="200" cy="195" r="2.5" fill="#EF4444" opacity="0.5"/>
+
+  <!-- Dots decoration -->
+  <circle cx="100" cy="120" r="2" fill="#EF4444" opacity="0.2"/>
+  <circle cx="300" cy="130" r="2" fill="#F59E0B" opacity="0.2"/>
+  <circle cx="110" cy="240" r="1.5" fill="#F59E0B" opacity="0.15"/>
+  <circle cx="290" cy="230" r="1.5" fill="#EF4444" opacity="0.15"/>
+</svg>

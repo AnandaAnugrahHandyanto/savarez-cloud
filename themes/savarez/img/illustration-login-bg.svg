@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0B1E"/>
+      <stop offset="30%" stop-color="#1A1040"/>
+      <stop offset="70%" stop-color="#0B1A2E"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="orb1" cx="30%" cy="30%">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="70%" cy="70%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="blur2"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Ambient orbs -->
+  <circle cx="240" cy="180" r="200" fill="url(#orb1)" filter="url(#blur1)"/>
+  <circle cx="560" cy="420" r="180" fill="url(#orb2)" filter="url(#blur1)"/>
+
+  <!-- Grid pattern (subtle) -->
+  <g opacity="0.03" stroke="#A78BFA" stroke-width="0.5">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="160" y1="0" x2="160" y2="600"/>
+    <line x1="320" y1="0" x2="320" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+    <line x1="640" y1="0" x2="640" y2="600"/>
+  </g>
+
+  <!-- Floating particles -->
+  <circle cx="120" cy="90" r="2" fill="#7C3AED" opacity="0.4"/>
+  <circle cx="680" cy="120" r="1.5" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="90" cy="480" r="2" fill="#3B82F6" opacity="0.35"/>
+  <circle cx="720" cy="510" r="1.5" fill="#7C3AED" opacity="0.3"/>
+  <circle cx="400" cy="60" r="1" fill="#A78BFA" opacity="0.25"/>
+  <circle cx="500" cy="540" r="1.5" fill="#60A5FA" opacity="0.3"/>
+</svg>
