@@ -1,0 +1,23 @@
+/* app/css/components/cards.css */
+.oc-background-container,
+.dashboard-widget,
+.app-sidebar-tabs__content,
+.files-list__item-card {
+    border-radius: var(--savarez-radius-card);
+    backdrop-filter: blur(10px);
+    background-color: var(--savarez-color-surface-glass);
+    border: 1px solid var(--savarez-color-border-glass);
+    transition: all var(--savarez-transition-base);
+}
+
+.oc-background-container:hover,
+.dashboard-widget:hover,
+.app-sidebar-tabs__content:hover,
+.files-list__item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--savarez-shadow-card-hover);
+}
+
+.dashboard-section__content .dashboard-widget {
+    margin-bottom: var(--savarez-spacing-lg);
+}

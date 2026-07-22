@@ -1,0 +1,5 @@
+/* app/css/tokens/animation.css */
+:root {
+    --savarez-transition-fast: 0.2s ease-in-out;
+    --savarez-transition-base: 0.3s ease-in-out;
+}

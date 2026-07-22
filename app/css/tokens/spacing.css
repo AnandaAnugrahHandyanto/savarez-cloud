@@ -1,0 +1,7 @@
+/* app/css/tokens/spacing.css */
+:root {
+    --savarez-spacing-sm: 8px;
+    --savarez-spacing-md: 15px;
+    --savarez-spacing-lg: 20px;
+    --savarez-spacing-xl: 40px;
+}

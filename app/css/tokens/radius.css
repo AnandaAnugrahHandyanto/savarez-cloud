@@ -1,0 +1,8 @@
+/* app/css/tokens/radius.css */
+:root {
+    --savarez-radius-card: 20px;
+    --savarez-radius-toolbar: 15px;
+    --savarez-radius-item: 12px;
+    --savarez-radius-button: 8px;
+    --savarez-radius-breadcrumb: 10px;
+}

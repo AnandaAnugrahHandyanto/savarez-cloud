@@ -1,0 +1,6 @@
+/* app/css/tokens/shadows.css */
+:root {
+    --savarez-shadow-card-hover: 0 10px 20px rgba(0, 0, 0, 0.2);
+    --savarez-shadow-item-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --savarez-shadow-button-hover: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

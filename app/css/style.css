@@ -1,6 +1,23 @@
 /* app/css/style.css */
 
-@import url("./modules/cards.css");
-@import url("./modules/layout.css");
+/* 1. Design Tokens */
+@import url("./tokens/colors.css");
+@import url("./tokens/radius.css");
+@import url("./tokens/spacing.css");
+@import url("./tokens/shadows.css");
+@import url("./tokens/animation.css");
 
-/* Anda bisa menambahkan CSS global lainnya di sini jika diperlukan */
+/* 2. Base Styles */
+@import url("./base/reset.css");
+@import url("./base/typography.css");
+@import url("./base/utilities.css");
+
+/* 3. Components */
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/empty-state.css");
+
+/* 4. Layouts */
+@import url("./layouts/header.css");
+@import url("./layouts/files.css");
+@import url("./layouts/dashboard.css");

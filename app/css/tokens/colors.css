@@ -1,0 +1,13 @@
+/* app/css/tokens/colors.css */
+:root {
+    --savarez-color-primary: #6a1b9a;
+    --savarez-color-accent: #9c27b0;
+    --savarez-color-bg-base: #1a1a2e;
+    --savarez-color-text-main: #e0e0e0;
+    --savarez-color-text-dim: rgba(255, 255, 255, 0.7);
+    --savarez-color-text-highlight: #ffffff;
+    --savarez-color-surface-glass: rgba(255, 255, 255, 0.1);
+    --savarez-color-surface-glass-dim: rgba(255, 255, 255, 0.08);
+    --savarez-color-border-glass: rgba(255, 255, 255, 0.2);
+    --savarez-color-border-glass-dim: rgba(255, 255, 255, 0.15);
+}
